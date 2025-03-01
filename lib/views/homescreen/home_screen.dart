@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../Task/task_screen.dart';
+
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
   @override
@@ -8,8 +10,13 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Youtube'),
       ),
-      body: const Center(
-        child: Text('Home Screen'),
+      body: Center(
+        child: ElevatedButton(
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => TaskScreen()));
+            },
+            child: const Text('Home Screen')),
       ),
     );
   }
